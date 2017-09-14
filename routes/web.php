@@ -20,5 +20,6 @@ Route::get('/dashboard', function () {
 });
 
 Route::resource('requisitos','RequisitoController');
+Route::get('/requisitos/project/{id}', 'RequisitoController@project');
 
 Route::resource('projetos','ProjetoController');

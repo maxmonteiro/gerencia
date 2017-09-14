@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <div class="col-sm-8 col-sm-offset-1">
-    
+    <h1>Id: {{ $projetos->id }}</h1>
     <h1>{{ $projetos->titulo }}</h1>
     <br>
     <h5>Descrição</h5>
@@ -14,7 +14,7 @@
     <h5>Data de término</h5>
     <p>{{ Carbon\Carbon::parse($projetos->dt_fim)->format('d/m/Y') }}</p>
     <br>
-    <h5><a href="../requisitos/index.html">Requisitos</a></h5>
+    <h5><a href="{{ URL::to('requisitos/project/' . $projetos->id) }}">Requisitos</a></h5>
     <br>
     <h5>Equipe</h5>
     <div class="col-sm-8">

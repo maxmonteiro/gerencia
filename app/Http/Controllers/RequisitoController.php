@@ -56,6 +56,21 @@ class RequisitoController extends Controller
     }
 
     /**
+     * Exibe os requisitos referentes a um projeto.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function project($id)
+    {
+        //
+        $projeto = $id;
+        //$requisitos = Requisito::all();
+        return view('requisitos.project')
+            ->with('projeto', $projeto);
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
