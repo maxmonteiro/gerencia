@@ -48,12 +48,7 @@ class ProjetoController extends Controller
         // setar os campos
         $projetos->titulo = $request->titulo;
         $projetos->descricao = $request->descricao;
-        
         $projetos->dt_inicio = $request->dt_inicio;
-        $dt_inicio = $projetos->dt_inicio;
-        if (empty($dt_inicio)) {
-            $dt_inicio = null;
-        }
         $projetos->dt_fim = $request->dt_fim;
         // salvar o objeto
         $projetos->save();
@@ -69,7 +64,11 @@ class ProjetoController extends Controller
      */
     public function show($id)
     {
-        //
+        // selecionar o registro na tabela atraves do parametro id
+        $projetos = Projeto::find($id);
+        // carregar a view e passar o registro
+        return view('projetos.show')
+            ->with('projetos', $projetos);
     }
 
     /**
