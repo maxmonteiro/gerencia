@@ -2,6 +2,6 @@
 
 @section('conteudo')
 
-<h1>Exibir projeto</h1>
+<h1>Dashboard</h1>
 
 @stop

@@ -19,8 +19,9 @@ class ProjetoController extends Controller
         $projetos = Projeto::all();
         
         // carregar a view e passar os projetos
-        return View::make('projetos.index')
-            ->with('projetos', $projetos);
+        /*return View::make('projetos.index')
+            ->with('projetos', $projetos);*/
+        return view('projetos.index', ['projetos' => $projetos]);
     }
 
     /**
@@ -30,7 +31,8 @@ class ProjetoController extends Controller
      */
     public function create()
     {
-        //
+        // carregar a view do formulário
+        return view('projetos.create');
     }
 
     /**
@@ -41,7 +43,22 @@ class ProjetoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // instanciar um novo objeto
+        $projetos = new Projeto;
+        // setar os campos
+        $projetos->titulo = $request->titulo;
+        $projetos->descricao = $request->descricao;
+        
+        $projetos->dt_inicio = $request->dt_inicio;
+        $dt_inicio = $projetos->dt_inicio;
+        if (empty($dt_inicio)) {
+            $dt_inicio = null;
+        }
+        $projetos->dt_fim = $request->dt_fim;
+        // salvar o objeto
+        $projetos->save();
+        // redirecionar para lista
+        return redirect('projetos');
     }
 
     /**
