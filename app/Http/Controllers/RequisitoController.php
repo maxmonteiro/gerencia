@@ -17,7 +17,6 @@ class RequisitoController extends Controller
     {
         // pegar os requisitos
         $requisitos = Requisito::all();
-        
         // carregar a view e passar os requisitos
         return View::make('requisitos.index')
             ->with('requisitos', $requisitos);

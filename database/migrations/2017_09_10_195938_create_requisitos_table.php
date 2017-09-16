@@ -18,9 +18,7 @@ class CreateRequisitosTable extends Migration {
 			$table->integer('ref');
 			$table->string('titulo', 40)->nullable();
 			$table->text('descricao')->nullable();
-			$table->integer('prioridade')->nullable()->comment('0 - baixa
-1 - media
-2 - alta');
+			$table->string('prioridade')->nullable()->comment('baixa - media - alta');
 			$table->integer('projeto_id')->nullable()->comment('codigo do projeto no qual pertence o requisito');
 		});
 	}
