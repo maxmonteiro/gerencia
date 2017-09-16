@@ -15,9 +15,10 @@ class CreateRequisitosTable extends Migration {
 		Schema::create('requisitos', function(Blueprint $table)
 		{
 			$table->integer('id', true);
+			$table->integer('ref');
 			$table->string('titulo', 40)->nullable();
 			$table->text('descricao')->nullable();
-			$table->char('prioridade', 1)->nullable()->comment('0 - baixa
+			$table->integer('prioridade')->nullable()->comment('0 - baixa
 1 - media
 2 - alta');
 			$table->integer('projeto_id')->nullable()->comment('codigo do projeto no qual pertence o requisito');
