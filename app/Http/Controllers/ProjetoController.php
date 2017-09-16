@@ -116,6 +116,11 @@ class ProjetoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // selecionar o registro na tabela
+        $projetos = Projeto::find($id);
+        // excluir o registro
+        $projetos->delete();
+        // redirecionar para a lista
+        return redirect('projetos');
     }
 }

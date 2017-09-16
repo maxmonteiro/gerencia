@@ -173,13 +173,23 @@ body {
 }
 
 /*
+ * css tabela de listagem
+ */
+table td form {
+    display: inline-block;
+    width: 0px;
+}
+
+/*
  * css formularios
-*/
+ */
 .form-date {
     width: 200px;
 }
 
-
+/*
+ * css footer
+ */
 .social-media {
     margin: 0 auto;
     padding-left: 40%;

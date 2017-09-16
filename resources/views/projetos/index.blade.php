@@ -22,15 +22,20 @@
             </tr>
         </thead>
         <tbody>
-        @foreach($projetos as $key => $value)
+        @foreach($projetos as $projeto)
             <tr>
-                <td>{{ $value->id }}</td>
-                <td>{{ $value->titulo }}</td>
-                <td>{{ Carbon\Carbon::parse($value->dt_inicio)->format('d/m/Y') }}</td>
-                <td>{{ Carbon\Carbon::parse($value->dt_fim)->format('d/m/Y') }}</td>
+                <td>{{ $projeto->id }}</td>
+                <td>{{ $projeto->titulo }}</td>
+                <td>{{ Carbon\Carbon::parse($projeto->dt_inicio)->format('d/m/Y') }}</td>
+                <td>{{ Carbon\Carbon::parse($projeto->dt_fim)->format('d/m/Y') }}</td>
                 <td>
-                    <a class="btn btn-small btn-success" href="{{ URL::to('projetos/' . $value->id) }}">Exibir</a>
-                    <a class="btn btn-small btn-info" href="{{ URL::to('projetos/' . $value->id . '/edit') }}">Editar</a>
+                    <a class="btn btn-small btn-success" href="{{ URL::to('projetos/' . $projeto->id) }}">Exibir</a>
+                    <a class="btn btn-small btn-info" href="{{ URL::to('projetos/' . $projeto->id . '/edit') }}">Editar</a>
+                    <form action="/projetos/{{ $projeto->id }}" method="POST">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input class="btn btn-small btn-danger" type="submit" name="name" value="Apagar">
+                    </form>
                 </td>
             </tr>
         @endforeach
