@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Requisito;
+use App\Projeto;
 use View;
 use Illuminate\Http\Request;
 
@@ -62,11 +63,14 @@ class RequisitoController extends Controller
      */
     public function project($id)
     {
-        //
-        $projeto = $id;
-        //$requisitos = Requisito::all();
+        // selecionar o projeto através da id
+        $projetos = Projeto::find($id);
+        // filtrar os requisitos através do id do projeto
+        $requisitos = Requisito::where('projeto_id', $projetos->id)->get();
+        // enviar para a view o resultado
         return view('requisitos.project')
-            ->with('projeto', $projeto);
+            ->with('projeto', $projetos)
+            ->with('requisitos', $requisitos);
     }
 
     /**
