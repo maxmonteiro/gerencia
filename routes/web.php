@@ -24,5 +24,6 @@ Route::resource('projetos.requisitos','RequisitoController');
 Route::get('/requisitos/project/{id}', 'RequisitoController@project');
 //Route::get('/project/{id}/requisitos', 'RequisitoController@project');
 
-
 Route::resource('projetos','ProjetoController');
+
+Route::resource('usuarios','UsuarioController');

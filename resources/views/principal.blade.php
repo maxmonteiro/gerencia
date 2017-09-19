@@ -45,8 +45,10 @@
                             <li data-toggle="collapse" data-target="#tarefa" class="collapsed">
                                 <a href="{{ URL::to('tarefas') }}"><i class="fa fa-list fa-lg"></i> Tarefas</a>
                             </li>
-                            <li data-toggle="collapse" data-target="#usuario" class="collapsed">
-                                <a href="{{ URL::to('usuarios') }}"><i class="fa fa-users fa-lg"></i> Usuários</a>
+                            <li>
+                                <a href="{{ URL::to('usuarios') }}">
+                                    <i class="fa fa-users fa-lg"></i> Usuários
+                                </a>
                             </li>
                             <li data-toggle="collapse" data-target="#usuario" class="collapsed">
                                 <a href="{{ URL::to('painel') }}"><i class="fa fa-cog fa-lg"></i> Administrativo</a>
