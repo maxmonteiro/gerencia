@@ -28,7 +28,6 @@
                 <td>{{ $requisito->prioridade }}</td>
                 <td>{{ $requisito->projeto_id }}</td>
                 <td>
-                    <a class="btn btn-small btn-success" href="{{ URL::to('requisitos/' . $requisito->id) }}">Exibir</a>
                     <a class="btn btn-small btn-info" href="{{ URL::to('requisitos/' . $requisito->id . '/edit') }}">Editar</a>
                     <form action="/requisitos/{{ $requisito->id }}" method="POST">
                         <input type="hidden" name="_method" value="delete">

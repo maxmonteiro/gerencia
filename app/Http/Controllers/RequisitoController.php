@@ -63,7 +63,13 @@ class RequisitoController extends Controller
      */
     public function show($id)
     {
-        //
+        /*
+        // selecionar o registro na tabela atraves do parametro id
+        $requisitos = Requisito::find($id);
+        // carregar a view e passar o registro
+        return view('requisitos.show')
+            ->with('requisitos', $requisitos);
+        */
     }
 
     /**
@@ -105,7 +111,11 @@ class RequisitoController extends Controller
      */
     public function edit($id)
     {
-        //
+        /// selecionar o registro na tabela
+        $requisitos = Requisito::find($id);
+        // retorna para o formulario de edicao
+        return view('requisitos.edit')
+            ->with('requisitos', $requisitos);
     }
 
     /**
@@ -117,7 +127,17 @@ class RequisitoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // selecionar o registro na tabela
+        $requisitos = Requisito::find($id);
+        // setar os campos
+        $requisitos->ref = $request->ref;
+        $requisitos->titulo = $request->titulo;
+        $requisitos->prioridade = $request->prioridade;
+        $requisitos->projeto_id = $request->projeto;
+        // salvar o objeto
+        $requisitos->save();
+        // redirecionar para lista
+        return redirect('requisitos');
     }
 
     /**
