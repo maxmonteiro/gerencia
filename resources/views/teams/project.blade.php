@@ -23,7 +23,7 @@
                 <td>{{ $usuario->email }}</td>
                 <td>
                     <a class="btn btn-small btn-info" href="{{ URL::to('teams/edit/' . $usuario->id) }}">Editar</a>
-                    <form action="/teams/destroy/{{ $usuario->id }}" method="POST">
+                    <form action="/teams/{{ $usuario->id }}" method="POST">
                         <input type="hidden" name="_method" value="delete">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <input class="btn btn-small btn-danger" type="submit" name="name" value="Apagar">

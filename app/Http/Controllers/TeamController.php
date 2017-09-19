@@ -66,7 +66,8 @@ class TeamController extends Controller
         $teams->save();
 
         //redirecionando para
-        return redirect()->route('/teams/create/', [$id]);
+        //return redirect()->route('/teams/create/', [$id]);
+        return redirect()->back();
     }
 
     /**
@@ -77,13 +78,12 @@ class TeamController extends Controller
      */
      public function destroy($id)
      {
-         /*
          // selecionar o registro na tabela
-         $teams = Team::where('user_id', $id)->get();
+         $teams = Team::find($id);
          // excluir o registro
          $teams->delete();
          // redirecionar para a lista
-         return redirect('projetos');
-         */
+         return redirect()->back();
+         
      }
 }

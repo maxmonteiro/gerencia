@@ -52,7 +52,8 @@ class RequisitoController extends Controller
         // salvar o objeto
         $requisitos->save();
         // redirecionar para lista
-        return redirect('requisitos');
+        //return redirect('requisitos');
+        return redirect()->back();
     }
 
     /**
