@@ -4,6 +4,9 @@
 
 <div class="col-sm-8 col-sm-offset-1">
     <h1>Requisitos</h1>
+    <div class="row user-nav">
+        <a class="btn btn-small btn-primary" href="{{ URL::to('requisitos/create') }}">Novo requisito</a>
+    </div>
     <div class="input-group"> <span class="input-group-addon">Filtrar</span>
         <input id="filter" type="text" class="form-control" placeholder="Digite aqui...">
     </div>

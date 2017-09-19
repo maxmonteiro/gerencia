@@ -31,6 +31,7 @@ class RequisitoController extends Controller
     public function create()
     {
         //
+        return view('requisitos.create');
     }
 
     /**
@@ -41,7 +42,17 @@ class RequisitoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // instanciar um novo objeto
+        $requisitos = new Requisito;
+        // setar os campos
+        $requisitos->ref = $request->ref;
+        $requisitos->titulo = $request->titulo;
+        $requisitos->prioridade = $request->prioridade;
+        $requisitos->projeto_id = $request->projeto;
+        // salvar o objeto
+        $requisitos->save();
+        // redirecionar para lista
+        return redirect('requisitos');
     }
 
     /**
@@ -72,6 +83,19 @@ class RequisitoController extends Controller
             ->with('projeto', $projetos)
             ->with('requisitos', $requisitos);
     }
+
+    /**
+     * Cria um requisito referente a um projeto.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function novoRequisito($id){
+        // selecionar o projeto através da id
+        $projetos = Projeto::find($id);
+        //
+    }
+
 
     /**
      * Show the form for editing the specified resource.

@@ -40,7 +40,7 @@
                             </li>
                             <ul class="sub-menu collapse" id="projeto">
                                 <li><a href="{{ URL::to('projetos') }}">Listar projetos</a></li>
-                                <li><a href="{{ URL::to('projetos/create') }}">Novo projeto</a></li>
+                                <li><a href="{{ URL::to('requisitos') }}">Requisitos</a></li>
                             </ul>
                             <li data-toggle="collapse" data-target="#tarefa" class="collapsed">
                                 <a href="{{ URL::to('tarefas') }}"><i class="fa fa-list fa-lg"></i> Tarefas</a>

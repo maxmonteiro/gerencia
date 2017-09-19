@@ -4,7 +4,10 @@
 
 <div class="col-sm-8 col-sm-offset-1">
     <h1>Requisitos - {{ $projeto->titulo }}</h1>
-    <br>
+    <div class="row user-nav">
+        <!--<a class="btn btn-small btn-primary" href="{{ URL::to('requisitos/' . $projeto->id . '/create') }}">Novo requisito</a>-->
+        <a class="btn btn-small btn-primary" href="{{ URL::to('requisitos/create') }}">Novo requisito</a>
+    </div>
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
