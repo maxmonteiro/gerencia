@@ -7,9 +7,9 @@
     <div class="row user-nav">
         <a class="btn btn-small btn-primary" href="{{ URL::to('requisitos/create') }}">Novo requisito</a>
     </div>
-    <div class="input-group"> <span class="input-group-addon">Filtrar</span>
+    <!--<div class="input-group"> <span class="input-group-addon">Filtrar</span>
         <input id="filter" type="text" class="form-control" placeholder="Digite aqui...">
-    </div>
+    </div>-->
     <br>
     <table class="table table-striped table-bordered">
         <thead>

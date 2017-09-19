@@ -7,11 +7,11 @@
     <div class="row user-nav">
         <a class="btn btn-small btn-primary" href="{{ URL::to('usuarios/create') }}">Novo usuário</a>
     </div>
-    <div class="input-group"> <span class="input-group-addon">Filtrar</span>
+    <!--<div class="input-group"> <span class="input-group-addon">Filtrar</span>
         <input id="filter" type="text" class="form-control" placeholder="Digite aqui...">
-    </div>
+    </div>-->
     <br>
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <td>Cód.</td>

@@ -3,12 +3,11 @@
 @section('conteudo')
 
 <div class="col-sm-8 col-sm-offset-1">
-    <h1>Equipe - {{ $projeto->titulo }}</h1>
+    <h1>Equipe: {{ $projeto->titulo }}</h1>
     <div class="row user-nav">
-        <!--<a class="btn btn-small btn-primary" href="{{ URL::to('requisitos/' . $projeto->id . '/create') }}">Novo requisito</a>-->
         <a class="btn btn-small btn-primary" href="{{ URL::to('teams/create/' . $projeto->id) }}">Novo membro</a>
     </div>
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped">
         <thead>
             <tr>
                 <td>Nome</td>
