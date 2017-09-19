@@ -27,3 +27,5 @@ Route::get('/requisitos/project/{id}', 'RequisitoController@project');
 Route::resource('projetos','ProjetoController');
 
 Route::resource('usuarios','UsuarioController');
+
+Route::get('/teams/project/{id}', 'TeamController@project');

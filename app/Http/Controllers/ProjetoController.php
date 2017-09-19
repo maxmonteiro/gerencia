@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Projeto;
+use App\Team;
 use View;
 use Illuminate\Http\Request;
 
@@ -69,6 +70,18 @@ class ProjetoController extends Controller
         // carregar a view e passar o registro
         return view('projetos.show')
             ->with('projetos', $projetos);
+    }
+
+    public function showTeam($id)
+    {
+        // selecionar o registro na tabela atraves do parametro id
+        $projetos = Projeto::find($id);
+        // filtrar as equipes através do id do projeto
+        $teams = Team::where('proj_id', $projetos->id)->get();
+        // carregar a view e passar o registro
+        return view('projetos.team')
+            ->with('projetos', $projetos)
+            ->with('teams', $teams);
     }
 
     /**
