@@ -60,7 +60,11 @@ class UsuarioController extends Controller
      */
     public function show($id)
     {
-        //
+        // selecionar o registro na tabela atraves do parametro id
+        //$usuarios = Usuario::find($id);
+        // carregar a view e passar o registro
+        //return view('usuarios.show')
+        //    ->with('usuarios', $usuarios);
     }
 
     /**
@@ -71,7 +75,11 @@ class UsuarioController extends Controller
      */
     public function edit($id)
     {
-        //
+        // selecionar o registro na tabela
+        $usuarios = Usuario::find($id);
+        // retorna para o formulario de edicao
+        return view('usuarios.edit')
+            ->with('usuarios', $usuarios);
     }
 
     /**
@@ -83,7 +91,16 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // selecionar o registro na tabela atraves do parametro id
+        $usuarios = Usuario::find($id);
+        // setar os campos
+        $usuarios->name = $request->name;
+        $usuarios->email = $request->email;
+        $usuarios->password = $request->password;
+        // salvar o objeto
+        $usuarios->save();
+        // redirecionar para lista
+        return redirect('usuarios');
     }
 
     /**
@@ -94,6 +111,11 @@ class UsuarioController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // selecionar o registro na tabela
+        $usuarios = Usuario::find($id);
+        // excluir o registro
+        $usuarios->delete();
+        // redirecionar para a lista
+        return redirect('usuarios');
     }
 }
