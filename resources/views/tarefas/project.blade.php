@@ -6,7 +6,7 @@
     <h1>Tarefas - {{ $projeto->titulo }}</h1>
     <div class="row user-nav">
         <!--<a class="btn btn-small btn-primary" href="{{ URL::to('requisitos/' . $projeto->id . '/create') }}">Novo requisito</a>-->
-        <a class="btn btn-small btn-primary" href="{{ URL::to('tarefas/create') }}">Nova tarefa</a>
+        <a class="btn btn-small btn-primary" href="{{ URL::to('tarefas/create/' . $projeto->id) }}">Nova tarefa</a>
     </div>
     <table class="table table-striped table-bordered">
         <thead>

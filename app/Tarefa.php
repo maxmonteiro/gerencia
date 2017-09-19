@@ -13,7 +13,7 @@ class Tarefa extends Model
      */
     protected $fillable = [
         'descricao', 'etapa', 'prioridade', 'ordem', 
-            'comentario', 'dt_criacao', 'proejto_id',
+            'comentario', 'dt_criacao', 'projeto_id',
     ];
 
     // ignorando colunas updated_at e created_at

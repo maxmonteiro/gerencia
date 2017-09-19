@@ -45,3 +45,4 @@ Route::post('/teams/store', 'TeamController@store');
 // rotas para tarefas
 Route::resource('tarefas','TarefaController');
 Route::get('/tarefas/project/{id}', 'TarefaController@project');
+Route::get('/tarefas/create/{id}', 'TarefaController@create');

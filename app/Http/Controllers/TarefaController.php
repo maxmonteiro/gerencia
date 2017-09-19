@@ -45,10 +45,12 @@ class TarefaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
         //
-        return view('tarefas.create');
+        $projetos = Projeto::find($id);
+        return view('tarefas.create')
+            ->with('projetos', $projetos);
     }
 
     /**
@@ -59,7 +61,21 @@ class TarefaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // instanciar um novo objeto
+        $tarefas = new Tarefa;
+        // setar os campos
+        $tarefas->descricao = $request->descricao;
+        $tarefas->etapa = $request->etapa;
+        $tarefas->prioridade = $request->prioridade;
+        $tarefas->ordem = $request->ordem;
+        $tarefas->comentario = $request->comentario;
+        $tarefas->dt_criacao = $request->dt_criacao;
+        $tarefas->projeto_id = $request->projeto;
+        // salvar o objeto
+        $tarefas->save();
+        // redirecionar para lista
+        //return redirect('tarefas');
+        return redirect()->back();
     }
 
     /**
