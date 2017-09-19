@@ -29,3 +29,6 @@ Route::resource('projetos','ProjetoController');
 Route::resource('usuarios','UsuarioController');
 
 Route::get('/teams/project/{id}', 'TeamController@project');
+Route::get('/teams/create/{id}', 'TeamController@create');
+Route::post('/teams/store', 'TeamController@store');
+Route::post('/teams/destroy/{id}', 'TeamController@destroy');
