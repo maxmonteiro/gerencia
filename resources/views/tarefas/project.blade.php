@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <div class="col-sm-8 col-sm-offset-1">
-    <h1>Tarefas</h1>
+    <h1>Tarefas - {{ $projeto->titulo }}</h1>
     <div class="row user-nav">
         <!--<a class="btn btn-small btn-primary" href="{{ URL::to('requisitos/' . $projeto->id . '/create') }}">Novo requisito</a>-->
         <a class="btn btn-small btn-primary" href="{{ URL::to('tarefas/create') }}">Nova tarefa</a>
@@ -16,7 +16,6 @@
                 <td>Etapa</td>
                 <td>Prioridade</td>
                 <td>Ordem</td>
-                <td>Projeto</td>
                 <td>Ações</td>
             </tr>
         </thead>
@@ -27,7 +26,7 @@
                 <td>{{ $tarefa->descricao }}</td>
                 <td>{{ $tarefa->etapa }}</td>
                 <td>{{ $tarefa->prioridade }}</td>
-                <td>{{ $tarefa->projeto_id }}</td>
+                <td>{{ $tarefa->ordem }}</td>
                 <td>
                     <a class="btn btn-small btn-info" href="{{ URL::to('tarefas/' . $tarefa->id . '/edit') }}">Editar</a>
                     <form action="/tarefas/{{ $tarefa->id }}" method="POST">

@@ -44,8 +44,10 @@
                                 <li><a href="{{ URL::to('projetos') }}">Listar projetos</a></li>
                                 <li><a href="{{ URL::to('requisitos') }}">Requisitos</a></li>
                             </ul>
-                            <li data-toggle="collapse" data-target="#tarefa" class="collapsed">
-                                <a href="{{ URL::to('tarefas') }}"><i class="fa fa-list fa-lg"></i> Tarefas</a>
+                            <li>
+                                <a href="{{ URL::to('tarefas') }}">
+                                    <i class="fa fa-list fa-lg"></i> Tarefas
+                                </a>
                             </li>
                             <li>
                                 <a href="{{ URL::to('usuarios') }}">

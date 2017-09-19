@@ -14,9 +14,10 @@
     <p>{{ Carbon\Carbon::parse($projetos->dt_fim)->format('d/m/Y') }}</p>
     <br>
     <h5><a href="{{ URL::to('requisitos/project/' . $projetos->id) }}">Requisitos</a></h5>
-    <!--<h5><a href="{{ URL::to('projetos/' . $projetos->id . '/requisitos') }}">Requisitos</a></h5>-->
     <br>
     <h5><a href="{{ URL::to('teams/project/' . $projetos->id) }}">Equipe</a></h5>
+    <br>
+    <h5><a href="{{ URL::to('tarefas/project/' . $projetos->id) }}">Tarefas</a></h5>
     
 </div>
 @stop

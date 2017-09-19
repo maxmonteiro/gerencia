@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Tarefa;
+use App\Projeto;
+use View;
 use Illuminate\Http\Request;
 
 class TarefaController extends Controller
@@ -13,8 +16,29 @@ class TarefaController extends Controller
      */
     public function index()
     {
-        //$tarefas = Tarefa::all();
+        $tarefas = Tarefa::all();
+        //return view('tarefas.index', ['tarefas' => $tarefas]);
+        return View::make('tarefas.index')
+            ->with('tarefas', $tarefas);
     }
+
+    /**
+     * Exibe as tarefas referentes a um projeto.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+     public function project($id)
+     {
+         // selecionar o projeto através da id
+         $projetos = Projeto::find($id);
+         // filtrar as tarefas através do id do projeto
+         $tarefas = Tarefa::where('projeto_id', $projetos->id)->get();
+         // enviar para a view o resultado
+         return view('tarefas.project')
+             ->with('projeto', $projetos)
+             ->with('tarefas', $tarefas);
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -24,6 +48,7 @@ class TarefaController extends Controller
     public function create()
     {
         //
+        return view('tarefas.create');
     }
 
     /**
