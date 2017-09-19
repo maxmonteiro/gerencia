@@ -41,3 +41,6 @@ Route::resource('teams','TeamController');
 Route::get('/teams/project/{id}', 'TeamController@project');
 Route::get('/teams/create/{id}', 'TeamController@create');
 Route::post('/teams/store', 'TeamController@store');
+
+// rotas para tarefas
+Route::resource('tarefas','TarefaController');
