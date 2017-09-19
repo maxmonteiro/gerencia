@@ -71,6 +71,21 @@ class TeamController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+     public function edit($id)
+     {
+         /// selecionar o registro na tabela
+         $teams = Team::find($id);
+         // retorna para o formulario de edicao
+         return view('teams.edit')
+             ->with('teams', $teams);
+     }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
