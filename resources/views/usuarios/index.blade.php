@@ -17,7 +17,6 @@
                 <td>Cód.</td>
                 <td>Nome</td>
                 <td>Email</td>
-                <td>Senha</td>
                 <td>Ações</td>
             </tr>
         </thead>
@@ -27,9 +26,7 @@
                 <td>{{ $usuario->id }}</td>
                 <td>{{ $usuario->name }}</td>
                 <td>{{ $usuario->email }}</td>
-                <td>{{ $usuario->password }}</td>
                 <td>
-                    <a class="btn btn-small btn-success" href="{{ URL::to('usuarios/' . $usuario->id) }}">Exibir</a>
                     <a class="btn btn-small btn-info" href="{{ URL::to('usuarios/' . $usuario->id . '/edit') }}">Editar</a>
                     <form action="/usuarios/{{ $usuario->id }}" method="POST">
                         <input type="hidden" name="_method" value="delete">

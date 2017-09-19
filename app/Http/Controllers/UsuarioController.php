@@ -28,7 +28,8 @@ class UsuarioController extends Controller
      */
     public function create()
     {
-        //
+        // carregar a view do formulário
+        return view('usuarios.create');
     }
 
     /**
@@ -39,7 +40,16 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // instanciar um novo objeto
+        $usuarios = new Usuario;
+        // setar os campos
+        $usuarios->name = $request->name;
+        $usuarios->email = $request->email;
+        $usuarios->password = $request->password;
+        // salvar o objeto
+        $usuarios->save();
+        // redirecionar para lista
+        return redirect('usuarios');
     }
 
     /**
