@@ -16,12 +16,9 @@ class CreateTarefasTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('descricao', 40)->nullable();
-			$table->integer('etapa')->nullable()->comment('0 - ToDo
-1 - Doing
-2 - Done');
-			$table->integer('prioridade')->nullable()->comment('0 - baixa
-1 - media
-2 - alta');
+			$table->string('etapa')->nullable()->comment('Open - Doing - Done');
+			$table->string('prioridade')->nullable()->comment('baixa - media - alta');
+			$table->integer('ordem')->nullable()->comment('0 a 9');
 			$table->text('comentario')->nullable();
 			$table->date('dt_criacao')->nullable();
 			$table->integer('projeto_id')->nullable();
