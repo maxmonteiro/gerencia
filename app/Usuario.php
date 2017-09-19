@@ -11,6 +11,10 @@ class Usuario extends Model
      *
      * @var array
      */
+    
+    // alterando tabela padrão
+    protected $table = 'users';
+
     protected $fillable = [
         'name', 'email', 'password',
     ];

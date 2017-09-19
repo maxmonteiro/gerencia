@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Usuario;
+use View;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -14,10 +16,9 @@ class UsuarioController extends Controller
     public function index()
     {
         // pegar os projetos
-        //$users = User::orderBy('id', 'asc')->get();
+        $usuarios = Usuario::orderBy('id', 'asc')->get();
         // carregar a view com os registros
-        //return view('users.index', ['users' => $users]);
-        return view('usuarios.index');
+        return view('usuarios.index', ['usuarios' => $usuarios]);
     }
 
     /**

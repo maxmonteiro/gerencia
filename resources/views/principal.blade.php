@@ -30,11 +30,13 @@
                     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
                     <div class="menu-list">
                         <ul id="menu-content" class="menu-content collapse out">
+                            <!--
                             <li>
                                 <a href="{{ URL::to('dashboard') }}">
                                     <i class="fa fa-dashboard fa-lg"></i> Dashboard
                                 </a>
                             </li>
+                            -->
                             <li data-toggle="collapse" data-target="#projeto" class="collapsed">
                                 <a href="#"><i class="fa fa-folder fa-lg"></i> Projetos <span class="arrow"></span></a>
                             </li>
@@ -50,9 +52,11 @@
                                     <i class="fa fa-users fa-lg"></i> Usuários
                                 </a>
                             </li>
-                            <li data-toggle="collapse" data-target="#usuario" class="collapsed">
+                            <!--
+                            <li data-toggle="collapse" data-target="#administrativo" class="collapsed">
                                 <a href="{{ URL::to('painel') }}"><i class="fa fa-cog fa-lg"></i> Administrativo</a>
                             </li>
+                            -->
                         </ul>
                     </div>
                 </div>
