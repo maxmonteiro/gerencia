@@ -148,6 +148,11 @@ class RequisitoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // selecionar o registro na tabela
+        $requisitos = Requisito::find($id);
+        // excluir o registro
+        $requisitos->delete();
+        // redirecionar para a lista
+        return redirect('requisitos');
     }
 }
