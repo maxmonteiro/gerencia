@@ -44,11 +44,11 @@
                                 <li><a href="{{ URL::to('projetos') }}">Listar projetos</a></li>
                                 <li><a href="{{ URL::to('requisitos') }}">Requisitos</a></li>
                             </ul>
-                            <li>
+                            <!--<li>
                                 <a href="{{ URL::to('tarefas') }}">
                                     <i class="fa fa-list fa-lg"></i> Tarefas
                                 </a>
-                            </li>
+                            </li>-->
                             <li>
                                 <a href="{{ URL::to('usuarios') }}">
                                     <i class="fa fa-users fa-lg"></i> Usuários

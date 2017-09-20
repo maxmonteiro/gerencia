@@ -49,7 +49,7 @@ class UsuarioController extends Controller
         // salvar o objeto
         $usuarios->save();
         // redirecionar para lista
-        return redirect('usuarios');
+        return Redirect::to('teams/project/' . $projetos->id);
     }
 
     /**
