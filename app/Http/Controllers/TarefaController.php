@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Tarefa;
 use App\Projeto;
 use View;
+use Redirect;
 use Illuminate\Http\Request;
 
 class TarefaController extends Controller
@@ -97,7 +98,11 @@ class TarefaController extends Controller
      */
     public function edit($id)
     {
-        //
+        // selecionar o registro na tabela
+        $tarefas = Tarefa::find($id);
+        // retorna para o formulario de edicao
+        return view('tarefas.edit')
+            ->with('tarefas', $tarefas);
     }
 
     /**
@@ -109,7 +114,22 @@ class TarefaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // selecionar o registro na tabela
+        $tarefas = Tarefa::find($id);
+        $projetos = Projeto::find($tarefas->projeto_id);
+        // setar os campos
+        $tarefas->descricao = $request->descricao;
+        $tarefas->etapa = $request->etapa;
+        $tarefas->prioridade = $request->prioridade;
+        $tarefas->ordem = $request->ordem;
+        $tarefas->comentario = $request->comentario;
+        $tarefas->dt_criacao = $request->dt_criacao;
+        $tarefas->projeto_id = $request->projeto;
+        // salvar o objeto
+        $tarefas->save();
+        // redirecionar para lista
+        //return redirect()->back();
+        return Redirect::to('tarefas/project/' . $projetos->id);
     }
 
     /**

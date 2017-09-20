@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Requisito;
 use App\Projeto;
+use Redirect;
 use View;
 use Illuminate\Http\Request;
 
@@ -112,7 +113,7 @@ class RequisitoController extends Controller
      */
     public function edit($id)
     {
-        /// selecionar o registro na tabela
+        // selecionar o registro na tabela
         $requisitos = Requisito::find($id);
         // retorna para o formulario de edicao
         return view('requisitos.edit')
@@ -130,6 +131,7 @@ class RequisitoController extends Controller
     {
         // selecionar o registro na tabela
         $requisitos = Requisito::find($id);
+        $projetos = Projeto::find($requisitos->projeto_id);
         // setar os campos
         $requisitos->ref = $request->ref;
         $requisitos->titulo = $request->titulo;
@@ -138,7 +140,7 @@ class RequisitoController extends Controller
         // salvar o objeto
         $requisitos->save();
         // redirecionar para lista
-        return redirect('requisitos');
+        return Redirect::to('requisitos/project/' . $projetos->id);
     }
 
     /**
