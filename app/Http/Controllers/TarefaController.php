@@ -140,6 +140,12 @@ class TarefaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // selecionar o registro na tabela
+        $tarefas = Tarefa::find($id);
+        $projetos = Projeto::find($tarefas->projeto_id);
+        // excluir o registro
+        $tarefas->delete();
+        // redirecionar para a lista
+        return Redirect::to('tarefas/project/' . $projetos->id);
     }
 }

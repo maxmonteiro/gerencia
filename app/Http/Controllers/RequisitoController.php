@@ -153,9 +153,10 @@ class RequisitoController extends Controller
     {
         // selecionar o registro na tabela
         $requisitos = Requisito::find($id);
+        $projetos = Projeto::find($requisitos->projeto_id);
         // excluir o registro
         $requisitos->delete();
         // redirecionar para a lista
-        return redirect('requisitos');
+        return Redirect::to('requisitos/project/' . $projetos->id);
     }
 }
